@@ -1,0 +1,274 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "e69a56be-e659-4cf5-bfc3-abfe37db407b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "🏴‍☠️ Welcome to the Adventure Quest 🏴‍☠️\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter your name, explorer:  Vikrant Moholkar\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Hello Vikrant Moholkar! Your mission is to find the legendary treasure.\n",
+      "\n",
+      "You are at the start of your journey. Choose a path:\n",
+      "1. Enter the dark forest\n",
+      "2. Enter the mysterious cave\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter 1 or 2:  1\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "🌲 You walk into the dark forest.\n",
+      "You see a flowing river and a tall tree.\n",
+      "1. Follow the river\n",
+      "2. Climb the tree\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter 1 or 2:  1\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "You follow the river and find a hidden bridge.\n",
+      "Crossing it, you discover the TREASURE! 🏆\n",
+      "🎉 You WIN the game!\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Do you want to play again? (yes/no):  yes\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "🏴‍☠️ Welcome to the Adventure Quest 🏴‍☠️\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter your name, explorer:  Vikrant Moholkar\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Hello Vikrant Moholkar! Your mission is to find the legendary treasure.\n",
+      "\n",
+      "You are at the start of your journey. Choose a path:\n",
+      "1. Enter the dark forest\n",
+      "2. Enter the mysterious cave\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter 1 or 2:  2\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "🕳️ You enter the mysterious cave.\n",
+      "It is very dark inside.\n",
+      "1. Light a torch\n",
+      "2. Move forward in the dark\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter 1 or 2:  1\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "The torch lights the cave.\n",
+      "You avoid traps and find the TREASURE! 🏆\n",
+      "🎉 You WIN the game!\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Do you want to play again? (yes/no):  no\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Thank you for playing! Goodbye 👋\n"
+     ]
+    }
+   ],
+   "source": [
+    "# adventure_game.py\n",
+    "# This program is a text-based adventure game where the player searches for a hidden treasure\n",
+    "\n",
+    "def start_game():\n",
+    "    print(\"\\n🏴‍☠️ Welcome to the Adventure Quest 🏴‍☠️\")\n",
+    "    name = input(\"Enter your name, explorer: \")\n",
+    "    print(f\"\\nHello {name}! Your mission is to find the legendary treasure.\\n\")\n",
+    "\n",
+    "    while True:\n",
+    "        print(\"You are at the start of your journey. Choose a path:\")\n",
+    "        print(\"1. Enter the dark forest\")\n",
+    "        print(\"2. Enter the mysterious cave\")\n",
+    "\n",
+    "        choice = input(\"Enter 1 or 2: \")\n",
+    "\n",
+    "        if choice == \"1\":\n",
+    "            game_over = forest_path()\n",
+    "        elif choice == \"2\":\n",
+    "            game_over = cave_path()\n",
+    "        else:\n",
+    "            print(\"Invalid choice. Please try again.\\n\")\n",
+    "            continue\n",
+    "\n",
+    "        if game_over:\n",
+    "            break\n",
+    "\n",
+    "    restart_game()\n",
+    "\n",
+    "\n",
+    "def forest_path():\n",
+    "    print(\"\\n🌲 You walk into the dark forest.\")\n",
+    "    print(\"You see a flowing river and a tall tree.\")\n",
+    "    print(\"1. Follow the river\")\n",
+    "    print(\"2. Climb the tree\")\n",
+    "\n",
+    "    choice = input(\"Enter 1 or 2: \")\n",
+    "\n",
+    "    if choice == \"1\":\n",
+    "        print(\"\\nYou follow the river and find a hidden bridge.\")\n",
+    "        print(\"Crossing it, you discover the TREASURE! 🏆\")\n",
+    "        print(\"🎉 You WIN the game!\")\n",
+    "        return True\n",
+    "    elif choice == \"2\":\n",
+    "        print(\"\\nYou slip while climbing and fall.\")\n",
+    "        print(\"❌ You are injured and lose the quest.\")\n",
+    "        return True\n",
+    "    else:\n",
+    "        print(\"Wrong choice. Returning to start.\\n\")\n",
+    "        return False\n",
+    "\n",
+    "\n",
+    "def cave_path():\n",
+    "    print(\"\\n🕳️ You enter the mysterious cave.\")\n",
+    "    print(\"It is very dark inside.\")\n",
+    "    print(\"1. Light a torch\")\n",
+    "    print(\"2. Move forward in the dark\")\n",
+    "\n",
+    "    choice = input(\"Enter 1 or 2: \")\n",
+    "\n",
+    "    if choice == \"1\":\n",
+    "        print(\"\\nThe torch lights the cave.\")\n",
+    "        print(\"You avoid traps and find the TREASURE! 🏆\")\n",
+    "        print(\"🎉 You WIN the game!\")\n",
+    "        return True\n",
+    "    elif choice == \"2\":\n",
+    "        print(\"\\nYou fall into a hidden pit.\")\n",
+    "        print(\"❌ Game Over. You lost the adventure.\")\n",
+    "        return True\n",
+    "    else:\n",
+    "        print(\"Wrong choice. Returning to start.\\n\")\n",
+    "        return False\n",
+    "\n",
+    "\n",
+    "def restart_game():\n",
+    "    choice = input(\"\\nDo you want to play again? (yes/no): \").lower()\n",
+    "    if choice == \"yes\":\n",
+    "        start_game()\n",
+    "    else:\n",
+    "        print(\"\\nThank you for playing! Goodbye 👋\")\n",
+    "\n",
+    "\n",
+    "# Start the game\n",
+    "start_game()\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ff7c9789-6667-4592-be89-f18d28951f29",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
